@@ -27,29 +27,6 @@ const defaultOptions = {
       this.loadMap();
     }
   }
-//
-//   getNewCenter= results =>{
-//   console.log(results)
-// if(results.length === 0){
-// return this.state.center
-// }
-//   let lats=results.map((art)=> {
-//
-//     return art.the_geom.coordinates[1]
-//   })
-//   let lngs=results.map((art)=> {
-//     return art.the_geom.coordinates[0]
-//   })
-//
-//   let minLat = Math.min(...lats)
-//   let maxLat = Math.max(...lats)
-//   let minLng = Math.min(...lngs)
-//   let maxLng = Math.max(...lngs)
-//
-//   let newLat = (minLat + maxLat) /2
-//   let newLng = (minLng + maxLng) /2
-//   return   {lat:newLat, lng:newLng}
-// }
 
   loadMap() {
     if (this.props && this.props.google) {

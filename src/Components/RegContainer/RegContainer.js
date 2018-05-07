@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router";
-import {Link, Route} from 'react-router-dom';
 
 import Form from 'grommet/components/Form';
 import Header from 'grommet/components/Header';
@@ -11,7 +10,6 @@ import Button from 'grommet/components/Button';
 import TextInput from 'grommet/components/TextInput';
 import Paragraph from 'grommet/components/Paragraph';
 import Section from 'grommet/components/Section';
-import Box from 'grommet/components/Box';
 import Image from 'grommet/components/Image';
 
 
@@ -99,7 +97,10 @@ submitForm(event){
     const { user } = this.state;
     const { errors } = this.state
     if(user.registered) {
-      return <Redirect to={`/donors/:user.uid/:user.zipCodeInput`} user={this.state.user} component={DonorsList} />
+
+      return <Redirect to={`/donors/${user.uid}/${user.zipCodeInput}`}  />
+
+
     }
 
     return(
@@ -189,10 +190,10 @@ submitForm(event){
                             fill={false}
                             onClick={this.submitForm} />
 
+
                         </Footer>
                     </Form>
               </Section>
-              <Route path="/donors/:user.uid/:user.zipCodeInput" component={DonorsList} />
         </Section>
 
     )

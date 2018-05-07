@@ -24,7 +24,8 @@ class DonorsList extends Component{
       donors : [],
       loading: true,
       userValues:this.props.user,
-      user:this.props.location.state
+      user:this.props.location.state,
+      currentUser:{}
 
     }
     this.searchDonorsList = this.searchDonorsList.bind(this);
@@ -40,17 +41,17 @@ class DonorsList extends Component{
 
 
 checkUser(){
-  const {user} =this.state
+  const {currentUser} =this.state
 
 
-  if(!user || user == null){
+  if(!currentUser || currentUser == null){
     return (
       defaultDonors().then(donors => {
       this.setState({donors:donors, loading:false});
     })
     )
   }
-  const term = user.donor.zipCodeInput
+  const term = currentUser.zipCodeInput
   return (
 
     filterDonors(term).then(donors => {
@@ -62,9 +63,16 @@ checkUser(){
 
 
 componentDidMount() {
+
       this.checkUser();
 }
 
+componentWillMount(){
+  this.setState({
+    currentUser:JSON.parse(localStorage.getItem('user'))
+  })
+
+}
 
 searchDonorsList(term){
   filterDonors(term).then(donors =>{
@@ -91,12 +99,12 @@ renderDonors(){
 }
 
   render(){
-    console.log(this.state.donors);
-console.log(this.state.user);
+    console.log("DONOR: ", this.state.donors);
+console.log("CU: ", this.state.currentUser);
 
     return(
     <Section >
-  
+
         <SearchBar searchDonorsList={this.searchDonorsList} />
             <Split
                   separator={true}
@@ -124,6 +132,7 @@ console.log(this.state.user);
 
     )
   }
+
 }
 
 export default DonorsList;

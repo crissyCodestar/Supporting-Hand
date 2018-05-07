@@ -35,6 +35,10 @@ const Nav = () =>{
                     <Menu responsive={true}
                           inline={true}
                           direction='row'>
+                          <Anchor size='small' tag='h5'>
+                          <a href='/#search'>Saved Searches</a>
+
+                          </Anchor>
                         <Anchor size='small' tag='h5'>
                           <Link to='/donors'>Search Donors</Link>
                         </Anchor>

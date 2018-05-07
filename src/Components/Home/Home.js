@@ -5,6 +5,8 @@ import RegContainer from '../RegContainer/RegContainer';
 import User from '../User/User';
 
 import Section from 'grommet/components/Section';
+import Heading from 'grommet/components/Heading';
+import Anchor from 'grommet/components/Anchor';
 
 class Home extends Component {
   constructor(props) {
@@ -29,9 +31,16 @@ componentDidMount(){
 renderUserHome(){
   const {usersList} =this.state
   if(!usersList || usersList == null){
-    return
+    return<Heading strong={false}
+        uppercase={true}
+        truncate={false}
+        align='center'
+        margin='medium'
+        >
+        No saved searches
+        </Heading>
   }
-  return <User usersList={this.state.usersList} />
+  return <User usersList={this.state.usersList}/>
 }
 
 
@@ -43,8 +52,12 @@ console.log(this.state.usersList);
 
       return(
         <Section>
+
+
             <RegContainer />
             {this.renderUserHome()}
+            <Section  id="search">
+            </Section>
         </Section>
 
       )
