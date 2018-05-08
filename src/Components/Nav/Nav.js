@@ -17,9 +17,9 @@ const Nav = () =>{
           <Section>
               <Section>
                     <Header
+                        colorIndex='light-1'
                         float={true}
-                        pad='small'
-                        margin='none'
+                        pad={{'horizontal':'medium'}}
                         size='small'
                         fixed={true}>
                             <Link to='/'><Image src={logo} size='thumb'/></Link>
@@ -28,19 +28,20 @@ const Nav = () =>{
                                     justify='end'
                                     direction='row'
                                     margin='small'
-                                    pad={{'horizontal':'medium'}}
+                                    pad={{'horizontal':'large'}}
                                     responsive={true}>
                                         <Menu
                                             responsive={true}
                                             inline={true}
                                             direction='row'>
-                                                <Anchor size='small' tag='h5'>
+                                                <Anchor tag='h5'>
                                                       <a href='/#saved'>Saved Searches</a>
                                                 </Anchor>
-                                                <Anchor size='small' tag='h5'>
+                                                <Anchor tag='h5'>
                                                       <Link to='/donors'>Search Donors</Link>
                                                 </Anchor>
-                                                <Anchor size='small' tag='h5'  colorIndex='neutral-1'>
+                                                  <div>|</div>
+                                                <Anchor tag='h5'>
                                                       <a href='https://www.donorschoose.org/about'>
                                                             Visit DonorsChoose.org
                                                       </a>
@@ -49,8 +50,7 @@ const Nav = () =>{
                                   </Box>
                     </Header>
               </Section>
-              <Section
-                  margin={{'top':'large'}}>
+              <Section>
                     <Hero
                         background={<Image src='https://c1.staticflickr.com/4/3837/14173066439_a131eed12e_b.jpg'
                         fit='cover'

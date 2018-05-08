@@ -1,5 +1,5 @@
 
-const donorsKey = 'ef4uju946azk';
+const donorsKey = 'INSERT_DONORS_API_KEY';
 const API = `https://cors-anywhere.herokuapp.com/https://api.donorschoose.org/common/json_feed.html?partiallyFunded=yes`;
 
 
