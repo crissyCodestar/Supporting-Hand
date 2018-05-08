@@ -6,21 +6,13 @@ import DonorsMap from '../DonorsMap/DonorsMap';
 
 
 export class DonorsMapContainer extends Component{
-
-
-
   render(){
-
-
-
     return(
       <DonorsMap
-                donors={this.props.donors}
-                google={this.props.google} />
-
+          donors={this.props.donors}
+          google={this.props.google} />
     )
   }
-
 }
 
 const LoadingContainer = (props) => (
@@ -28,7 +20,7 @@ const LoadingContainer = (props) => (
 )
 
 export default GoogleApiWrapper({
-  apiKey: (`INSERT__GOOGLE__API__KEY`),
+  apiKey: (`AIzaSyDnXYgSKyV4HhkmPDXxOOpDFjNaUJPqomQ`),
   LoadingContainer: LoadingContainer,
   v:3.13,
 })(DonorsMapContainer)

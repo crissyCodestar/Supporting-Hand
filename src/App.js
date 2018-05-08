@@ -15,8 +15,8 @@ class App extends Component {
         <Nav/>
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/RegContainer' component={RegContainer}/>
           <Route path='/donors' component={DonorsList}/>
+          <Route path="/donors/:user.uid/:user.zipCodeInput"  component={DonorsList} />
         </Switch>
       </div>
     );

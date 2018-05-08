@@ -4,7 +4,7 @@ import Search from 'grommet/components/Search';
 import Button from 'grommet/components/Button';
 import Section from 'grommet/components/Section';
 import Header from 'grommet/components/Header';
-
+import Heading from 'grommet/components/Heading';
 
 
 class SearchBar extends Component{
@@ -29,29 +29,34 @@ class SearchBar extends Component{
     this.props.searchDonorsList(this.state.term)
     this.setState({serched:true})
     event.preventDefault();
-
   }
 
 
   render(){
     return(
-<Section pad='medium'>
-  <Header>
-    <Search
-            float={true}
-            size="medium"
-            inline={true}
-            fill='false'
-            dropAlign={{"top": "bottom"}}
-            placeHolder="Search By ZipCode, State, Topic or School"
-            onDOMChange={this.handleTermChange} />
-    <Button
-            accent={true}
-            label='Search'
-            onClick={this.handleSearch}
-            type='submit' />
-    </Header>
-</Section>
+    <Section
+          pad='none'
+          align='center'
+          margin='large'>
+            <Heading
+                tag='h2'
+                uppercase={true}>
+                  Find a classroom to support
+            </Heading>
+                <Header>
+                    <Search
+                        size="medium"
+                        inline={true}
+                        dropAlign={{"top": "bottom"}}
+                        placeHolder="Search By ZipCode, State, Topic or School"
+                        onDOMChange={this.handleTermChange} />
+                  <Button
+                        accent={true}
+                        label='Search'
+                        onClick={this.handleSearch}
+                        type='submit' />
+                </Header>
+      </Section>
     )
   }
 }

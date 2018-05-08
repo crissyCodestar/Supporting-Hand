@@ -1,7 +1,7 @@
 
 const donorsKey = 'ef4uju946azk';
 const API = `https://cors-anywhere.herokuapp.com/https://api.donorschoose.org/common/json_feed.html?partiallyFunded=yes`;
-// let zipCode = `11206` keywords=${zipCode}&
+
 
 export function defaultDonors(){
   let url = API;
