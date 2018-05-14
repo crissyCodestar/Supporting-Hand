@@ -46,16 +46,20 @@ Everything should compile from package.json and install your node_modules.
 You will need your own [Donors Choose](https://data.donorschoose.org) and [Google Maps](https://cloud.google.com/maps-platform/) Api Key's, just register for a free account and you are in there.
 
 ### ../utils/donorsApi.js
-**_//Located in DonorsComponents folder_**
+
 
 ```JavaScript
+  //Located in DonorsComponents folder
+
 const donorsKey = 'INSERT_DONORS_API_KEY';
 ```
 
 ### ../DonorsMapContainer/DonorsMapContainer.js
-**_//Located in DonorsMapComponents folder_**
+
 
 ```JavaScript
+  //Located in DonorsMapComponents folder
+
 export default GoogleApiWrapper({
   apiKey: (`INSERT__GOOGLE__API__KEY`),
   LoadingContainer: LoadingContainer,
