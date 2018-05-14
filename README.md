@@ -10,7 +10,7 @@ You will only need Node.js installed on your environmemnt as well as [React JS](
 
 In your terminal, if you do not have Node.js installed please go to [Node.js for assistance](https://nodejs.org/en/download/) & don't forget [Yarn](https://yarnpkg.com/en/) or [NPM](https://www.npmjs.com/), whichever you prefer.
 
-```JavaScript
+```
 $ yarn -v
 1.5.1
 
@@ -23,7 +23,7 @@ $ npm -v
 
 This App is built on the [React Js](https://reactjs.org) framework so, yea it is totally needed.
 
-```JavaScript
+```
 $ npm info react version
 16.3.2
 ```
@@ -39,23 +39,27 @@ $ git clone https://github.com/crissygrant82/SupportingHands.git <YOUR_DIR_NAME>
 $ cd <YOUR_DIR_NAME>
 $ npm install
 ```
-Everything should compile from package.json and install your node_modules
+Everything should compile from package.json and install your node_modules.
 
 ## Configure App
 
-You will need your own [Donors Choose](https://data.donorschoose.org) and [Google Maps](https://cloud.google.com/maps-platform/) Api Key's, just register for a free account and your in.
+You will need your own [Donors Choose](https://data.donorschoose.org) and [Google Maps](https://cloud.google.com/maps-platform/) Api Key's, just register for a free account and you are in there.
 
 ### ../utils/donorsApi.js
-**_//Located in DonorsComponents folder_**
+
 
 ```JavaScript
+  //Located in DonorsComponents folder
+
 const donorsKey = 'INSERT_DONORS_API_KEY';
 ```
 
 ### ../DonorsMapContainer/DonorsMapContainer.js
-**_//Located in DonorsMapComponents folder_**
+
 
 ```JavaScript
+  //Located in DonorsMapComponents folder
+
 export default GoogleApiWrapper({
   apiKey: (`INSERT__GOOGLE__API__KEY`),
   LoadingContainer: LoadingContainer,
@@ -63,8 +67,13 @@ export default GoogleApiWrapper({
 })(DonorsMapContainer)
 ```
 
-Now you can explore.
+# Start App
 
+Now you can explore. Run the start command for React...
+
+```JavaScript
+$ npm start
+```
 
 ***
 
@@ -89,6 +98,7 @@ Crystal Grant - Initial work
 
 > Programming today is a race between software engineers striving to build bigger and better idiot-proof
 > programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.
+
 > ―- Rick Cook, The Wizardry Compiled
 
 # SupportingHand
