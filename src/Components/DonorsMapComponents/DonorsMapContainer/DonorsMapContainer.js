@@ -20,7 +20,7 @@ const LoadingContainer = (props) => (
 )
 
 export default GoogleApiWrapper({
-  apiKey: (`AIzaSyDnXYgSKyV4HhkmPDXxOOpDFjNaUJPqomQ`),
+  apiKey: (`INSERT__GOOGLE__API__KEY`),
   LoadingContainer: LoadingContainer,
   v:3.13,
 })(DonorsMapContainer)
