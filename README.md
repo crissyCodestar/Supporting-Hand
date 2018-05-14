@@ -63,8 +63,13 @@ export default GoogleApiWrapper({
 })(DonorsMapContainer)
 ```
 
-Now you can explore.
+# Start App
 
+Now you can explore. Run the start command for React...
+
+```JavaScript
+$ npm start
+```
 
 ***
 
