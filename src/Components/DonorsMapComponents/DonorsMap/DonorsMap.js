@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
+import Spinning from 'grommet/components/icons/Spinning';
 
 
  class DonorsMap extends Component {
@@ -24,7 +25,7 @@ import ReactDOM from 'react-dom'
 
   loadMap() {
       if (this.props && this.props.google) {
-        const {google, donors} = this.props;
+        const {google} = this.props;
         const maps = google.maps;
         const mapRef = this.refs.map;
         const node = ReactDOM.findDOMNode(mapRef);
@@ -51,7 +52,6 @@ import ReactDOM from 'react-dom'
           });
             this.map.fitBounds(bounds);
             this.map.panToBounds(bounds);
-            //console.log("SCHOOL: ",donor.school);
           const infowindow = new google.maps.InfoWindow({
             marker: this.marker,
             content:`${donor.school}`
@@ -65,12 +65,18 @@ import ReactDOM from 'react-dom'
 
   render() {
     const style = {
-      width: '50vw',
-      height: '100vh'
+      width: '30vw',
+      height: '60vh',
+      backgroundColor:'#0a64a0',
+      margin:'auto',
+      padding:'10rem'
     }
     return (
       <div ref="map" style={style}>
-          loading map...
+          <Spinning
+          justify='center'
+          align='center'
+          size='xlarge' />
       </div>
     )
   }

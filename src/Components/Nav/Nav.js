@@ -1,80 +1,68 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import HeroLayout from '../HeroLayout/HeroLayout';
 
 import Header from 'grommet/components/Header';
 import Box from 'grommet/components/Box';
 import Image from 'grommet/components/Image';
 import Anchor from 'grommet/components/Anchor';
 import Menu from 'grommet/components/Menu';
-import Hero from 'grommet/components/Hero';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
 
 import logo from '../logo/hand2.png';
 
+
+
 const Nav = () =>{
     return(
-          <Section>
-              <Section>
+          <Section
+              direction='row'
+              margin='none'
+              >
                     <Header
+                        justify='end'
                         colorIndex='light-1'
                         float={true}
-                        pad={{'horizontal':'medium'}}
+                        pad={{'horizontal':'small', 'left':'xlarge'}}
                         size='small'
-                        fixed={true}>
-                            <Link to='/'><Image src={logo} size='thumb'/></Link>
+                        fixed={true}
+                        >
+                            <Link to='/'><Image src={logo} margin='small' pad={{'horizontal':'large'}} size='thumb'/>
+                              </Link>
                                   <Box
                                     flex={true}
                                     justify='end'
                                     direction='row'
-                                    margin='small'
-                                    pad={{'horizontal':'large'}}
+
+                                    pad={{'horizontal':'medium'}}
                                     responsive={true}>
                                         <Menu
+
                                             responsive={true}
                                             inline={true}
-                                            direction='row'>
+                                            pad={{'horizontal':'medium'}}
+                                            margin={{'top': 'small'}}
+                                            direction='row'
+                                            >
+
                                                 <Anchor tag='h5'>
-                                                      <a href='/#saved'>Saved Searches</a>
+                                                      <Link to='/donors' style={{color:'#0a64a0'}}>Donor Search</Link>
                                                 </Anchor>
-                                                <Anchor tag='h5'>
-                                                      <Link to='/donors'>Search Donors</Link>
+                                                <Anchor tag='h5' >
+                                                      <Link to='/user_search' style={{color:'#0a64a0'}}>Saved Searches</Link>
                                                 </Anchor>
                                                   <div>|</div>
                                                 <Anchor tag='h5'>
-                                                      <a href='https://www.donorschoose.org/about'>
+                                                      <a style={{color:'#0a64a0'}} href='https://www.donorschoose.org/about'>
                                                             Visit DonorsChoose.org
                                                       </a>
                                                 </Anchor>
                                         </Menu>
                                   </Box>
                     </Header>
-              </Section>
-              <Section>
-                    <Hero
-                        background={<Image src='https://c1.staticflickr.com/4/3837/14173066439_a131eed12e_b.jpg'
-                        fit='cover'
-                        full={true} />}
-                        backgroundColorIndex='dark'>
-                            <Box
-                                direction='row'
-                                justify='center'
-                                align='center'>
-                                    <Box
-                                        basis='1/2'
-                                        align='end'
-                                        pad='medium' />
-                                    <Box
-                                        basis='1/2'
-                                        align='start'
-                                        pad='medium'>
-                                            <Heading margin='none'>
-                                                    Supporting Hand
-                                            </Heading>
-                                    </Box>
-                            </Box>
-                    </Hero>
-              </Section>
+
+
         </Section>
 
   )

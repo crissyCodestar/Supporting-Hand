@@ -1,5 +1,5 @@
 
-const donorsKey = 'INSERT_DONORS_API_KEY';
+const donorsKey = 'ef4uju946azk';
 const API = `https://cors-anywhere.herokuapp.com/https://api.donorschoose.org/common/json_feed.html?partiallyFunded=yes`;
 
 
@@ -11,7 +11,6 @@ export function defaultDonors(){
       Authorization: `Bearer ${donorsKey}`
     }
   }).then( (response) => response.json()).then((data) => {
-    console.log(data.proposals);
      return data.proposals.map((donor)=> ({
        id:donor.id,
        school:donor.schoolName,
