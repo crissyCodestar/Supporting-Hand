@@ -88,8 +88,12 @@ render(){
   return <Redirect to={{ pathname: `${user.url}`, state: { user: user} }} />
     }
   return(
-        <Section align='center'>
-              <Section align='center'>
+        <Section
+          pad={{'top':'small'}}
+          align='center'>
+              <Section
+                  margin={{'top':'medium'}}
+                  align='center'>
                     <Header>
                         <Heading>
                             Welcome to Supporting Hand
@@ -104,15 +108,16 @@ render(){
                 </Section>
                       <Image src={logo} size='small'/>
                           <Section align='center'
+                                  margin={{'top':'medium'}}
                                   responsive={true}
-                                  pad='medium'
                                   full='horizontal'
-                                  colorIndex='neutral-1'>
+                                  colorIndex='neutral-1'
+                                  id='signUp'>
                                           <Heading tag='h2'>
                                              Be Apart of Supporting Hand
                                           </Heading>
                                                 <Heading tag='h3'>
-                                                    Register to recieve information on classrooms in need in your area.
+                                                    Register to recieve information on classrooms in need nearest you.
                                                 </Heading>
                                                     <Form>
                                                       <Header pad='small' >

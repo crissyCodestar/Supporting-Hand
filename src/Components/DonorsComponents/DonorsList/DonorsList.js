@@ -10,6 +10,7 @@ import {defaultDonors, filterDonors} from '../utils/donorsApi';
 import Donors from '../Donors/Donors';
 import DonorsMapContainer from '../../DonorsMapComponents/DonorsMapContainer/DonorsMapContainer';
 import SearchBar from '../SearchBar/SearchBar';
+import HeroLayout from '../../HeroLayout/HeroLayout';
 
 
 
@@ -65,10 +66,18 @@ searchDonorsList(term){
 
 
 renderDonors(){
+  const style = {
+
+    backgroundColor:'#166ca5',
+
+  }
   return this.state.loading ? (
-     <Spinning size='xlarge' />
+     <Spinning
+      justify='center'
+      align='center'
+      size='xlarge' />
   ) : (
-    <div>
+    <div style={style}>
       <Donors donors={this.state.donors} />
     </div>
   )
@@ -77,8 +86,13 @@ renderDonors(){
   render(){
     return(
         <Section>
+            <HeroLayout
+                img={'https://static1.squarespace.com/static/5817ad78725e2564c2ca6ec4/t/583f04e3725e25406e0e3559/1480525047026/Diverse+young+students+studying+and+working+on+homework+outside+in+the+quad.jpg?format=1500w'}
+                headline='Donor Search'
+              />
             <SearchBar searchDonorsList={this.searchDonorsList} />
                 <Split
+                backgroundColorIndex='dark'
                       separator={true}
                       showOnResponsive='both'
                       fixed={true}>
@@ -89,14 +103,14 @@ renderDonors(){
                             pad='none'>
                                 {this.renderDonors()}
                         </Box>
-                            <Sidebar
-                                  colorIndex='neutral-1'
-                                  pad='none'
-                                  fixed={false}
-                                  full={false}>
-                                        <DonorsMapContainer
-                                              donors={this.state.donors}/>
-                            </Sidebar>
+                        <Sidebar
+                              colorIndex='neutral-1'
+                              pad='none'
+                              fixed={false}
+                              full={false}>
+                                    <DonorsMapContainer
+                                          donors={this.state.donors}/>
+                        </Sidebar>
                 </Split>
 
         </Section>

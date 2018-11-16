@@ -3,14 +3,13 @@ import { withRouter } from 'react-router-dom';
 import Search from 'grommet/components/Search';
 import Button from 'grommet/components/Button';
 import Section from 'grommet/components/Section';
-import Header from 'grommet/components/Header';
+import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 
 
 class SearchBar extends Component{
-  constructor(props){
-    super(props);
-    console.log(props);
+  constructor(){
+    super();
     this.state={
       term:'',
       serched:false
@@ -43,19 +42,36 @@ class SearchBar extends Component{
                 uppercase={true}>
                   Find a classroom to support
             </Heading>
-                <Header>
-                    <Search
-                        size="medium"
-                        inline={true}
-                        dropAlign={{"top": "bottom"}}
-                        placeHolder="Search By ZipCode, State, Topic or School"
-                        onDOMChange={this.handleTermChange} />
-                  <Button
+                <Box
+                    justify='around'
+                    direction='row'
+                    alignContent='between'
+
+                  >
+                  <Box
+                      pad='small'
+                    >
+                        <Search
+                            size="medium"
+                            inline={true}
+                            dropAlign={{"left": "left"}}
+                            iconAlign='start'
+                            placeHolder="Search By ZipCode, State, Topic or School"
+                            onDOMChange={this.handleTermChange} />
+                      </Box>
+                      <Box
+                          pad='small'
+                        >
+                      <Button
+                      fill={true}
                         accent={true}
-                        label='Search'
-                        onClick={this.handleSearch}
-                        type='submit' />
-                </Header>
+                            pad='small'
+                            margin='small'
+                            label='Search'
+                            onClick={this.handleSearch}
+                            type='submit' />
+                    </Box>
+                </Box>
       </Section>
     )
   }
