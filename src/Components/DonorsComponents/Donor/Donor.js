@@ -66,8 +66,8 @@ class Donor extends Component {
                                                         </Label>
                                           </Box>
                                 </Box>
-                                    <Paragraph>
-                                            <div dangerouslySetInnerHTML={ {__html: desc } } />
+                                    <Paragraph
+                                            dangerouslySetInnerHTML={ {__html: desc } } >
                                     </Paragraph>
                                         <Anchor
                                             size='small'
