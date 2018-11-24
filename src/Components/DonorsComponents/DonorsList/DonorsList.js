@@ -69,6 +69,9 @@ renderDonors(){
   const style = {
 
     backgroundColor:'#166ca5',
+    width:'100%',
+    height:'auto',
+    margin:'auto'
 
   }
   return this.state.loading ? (
