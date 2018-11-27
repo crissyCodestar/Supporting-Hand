@@ -11,6 +11,7 @@ import Donors from '../Donors/Donors';
 import DonorsMapContainer from '../../DonorsMapComponents/DonorsMapContainer/DonorsMapContainer';
 import SearchBar from '../SearchBar/SearchBar';
 import HeroLayout from '../../HeroLayout/HeroLayout';
+import {donorSearch} from '../../../photos'
 
 
 
@@ -40,9 +41,12 @@ queryDonorsList(){
       return (
         defaultDonors().then(donors => {
         this.setState({donors:donors, loading:false});
+
       })
+
     )
   }
+
   const term = currentUser.user.zipCodeInput
       return (
         filterDonors(term).then(donors => {
@@ -58,6 +62,7 @@ componentDidMount(){
 searchDonorsList(term){
   filterDonors(term).then(donors =>{
     this.setState({ donors:donors })
+
   })
     .catch(err => {
       return <h1>No Result, try again</h1>
@@ -87,15 +92,21 @@ renderDonors(){
 }
 
   render(){
+    let counter = 0
+    let arr=[{"home": 5}, {"home":3}]
+
+
+console.log(arr.push({"home":4}));
+    console.log(arr);
+
     return(
         <Section>
             <HeroLayout
-                img={'https://static1.squarespace.com/static/5817ad78725e2564c2ca6ec4/t/583f04e3725e25406e0e3559/1480525047026/Diverse+young+students+studying+and+working+on+homework+outside+in+the+quad.jpg?format=1500w'}
+                img={donorSearch}
                 headline='Donor Search'
               />
             <SearchBar searchDonorsList={this.searchDonorsList} />
                 <Split
-                backgroundColorIndex='dark'
                       separator={true}
                       showOnResponsive='both'
                       fixed={true}>

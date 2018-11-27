@@ -20,7 +20,7 @@ import Spinning from 'grommet/components/icons/Spinning';
   componentWillReceiveProps(nextProps){
         if(nextProps.donors !== this.props.donors){
             this.setState({donors:nextProps.donors});
-        }
+        };
     }
 
   loadMap() {
@@ -28,6 +28,7 @@ import Spinning from 'grommet/components/icons/Spinning';
         const {google} = this.props;
         const maps = google.maps;
         const mapRef = this.refs.map;
+        let labelIndex =1
         const node = ReactDOM.findDOMNode(mapRef);
         const infowindow = new maps.InfoWindow();
         const bounds = new maps.LatLngBounds({lat: 40.7485722, lng: -74.0068633});
@@ -44,7 +45,7 @@ import Spinning from 'grommet/components/icons/Spinning';
 
         this.props.donors.map( donor => {
           //Set location for bound area and zoom
-          const loc = new maps.LatLng(donor.lat, donor.long);
+          const loc = new maps.LatLng(Number(donor.lat), Number(donor.long) );
             bounds.extend(loc);
             //Marker position
 
@@ -52,10 +53,9 @@ import Spinning from 'grommet/components/icons/Spinning';
             map: this.map,
           //  position: {lat:Number(donor.lat), lng:Number(donor.long) },
           position: loc,
-            title: donor.school,
-
+          label: '6'
           });
-
+  console.log(labelIndex++, donor.key)
             this.map.fitBounds(bounds);
             this.map.panToBounds(bounds);
           const infowindow = new google.maps.InfoWindow({
@@ -80,6 +80,7 @@ import Spinning from 'grommet/components/icons/Spinning';
       margin:'auto',
       padding:'10rem'
     }
+    console.log(this.props.google.maps);
     return (
       <div ref="map" style={style}>
           <Spinning
