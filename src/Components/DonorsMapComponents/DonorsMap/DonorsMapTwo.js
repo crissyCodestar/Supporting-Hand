@@ -22,18 +22,7 @@ import Spinning from 'grommet/components/icons/Spinning';
             this.setState({donors:nextProps.donors});
         }
     }
-onGoogleApiLoaded = ({map, maps}) => {
-  this.map = map;
-  this.maps = maps;
-  this.infowindow = maps.InfoWindow();
-  var address = {lat: this.props.address.lat, lng: this.props.address.lng};
-  var service = new maps.places.PlacesService(map);
-  service.nearbySearch({
-    location: address,
-    radius: 2000,
-    types: ['school']
-  }, this.callback);
-}
+
 
 callback = (results, status) => {
   for(var i = 0; i < results.length; i++) {
@@ -67,6 +56,21 @@ renderMarkers = (place) => {
           scaleControl: true,
           mapTypeId: 'roadmap'
         })
+
+
+
+        onGoogleApiLoaded = ({map, maps}) => {
+          this.map = map;
+          this.maps = maps;
+          this.infowindow = maps.InfoWindow();
+          var address = {lat: this.props.address.lat, lng: this.props.address.lng};
+          var service = new maps.places.PlacesService(map);
+          service.nearbySearch({
+            location: address,
+            radius: 2000,
+            types: ['school']
+          }, this.callback);
+        }
 
 
         this.map = new maps.Map(node, mapConfig);

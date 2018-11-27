@@ -10,7 +10,7 @@ import Menu from 'grommet/components/Menu';
 import Section from 'grommet/components/Section';
 import Heading from 'grommet/components/Heading';
 
-import logo from '../logo/hand2.png';
+import {logo} from '../../photos';
 
 
 
@@ -24,11 +24,12 @@ const Nav = () =>{
                         justify='end'
                         colorIndex='light-1'
                         float={true}
-                        pad={{'horizontal':'small', 'left':'xlarge'}}
+                        pad={{'horizontal':'medium', 'left':'xlarge'}}
                         size='small'
                         fixed={true}
                         >
-                            <Link to='/'><Image src={logo} margin='small' pad={{'horizontal':'large'}} size='thumb'/>
+                            <Link to='/'><Image src={logo} margin='small'  pad={{'left':'xlarge'}} size='thumb'>
+                              </Image>
                               </Link>
                                   <Box
                                     flex={true}

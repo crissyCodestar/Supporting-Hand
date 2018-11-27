@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {GoogleApiWrapper} from 'google-maps-react'
 import Spinning from 'grommet/components/icons/Spinning';
-
+import {googleAPI} from '../../../keys'
 import DonorsMap from '../DonorsMap/DonorsMap';
 
 
@@ -20,7 +20,7 @@ const LoadingContainer = (props) => (
 )
 
 export default GoogleApiWrapper({
-  apiKey: (`AIzaSyDnXYgSKyV4HhkmPDXxOOpDFjNaUJPqomQ`),
+  apiKey: (googleAPI),
   LoadingContainer: LoadingContainer,
   v:3.13,
 })(DonorsMapContainer)
