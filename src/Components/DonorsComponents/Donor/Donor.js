@@ -14,7 +14,7 @@ import Language from 'grommet/components/icons/base/Language';
 
 class Donor extends Component {
   render(){
-    const { school, total, cost, title, desc, url } = this.props.donor
+    const { school, total, cost, title, desc, url, id } = this.props.donor
     let totalValue = cost/total*100
       return(
           <Tiles>
@@ -29,6 +29,7 @@ class Donor extends Component {
                                   tag='h3'
                                   strong={true}
                                   margin='none'>
+
                                       <div dangerouslySetInnerHTML={ {__html: title } } />
                               </Heading>
                       </Header>

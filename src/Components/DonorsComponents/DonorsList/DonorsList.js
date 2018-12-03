@@ -40,7 +40,15 @@ queryDonorsList(){
     if(!currentUser || currentUser == null){
       return (
         defaultDonors().then(donors => {
-        this.setState({donors:donors, loading:false});
+
+          let idNum = 0;
+            const result = donors.map(function(el) {
+              var o = Object.assign({}, el);
+              o.id = idNum+=1;
+              return o;
+            })
+            console.log("DONORS",result);
+        this.setState({donors:result, loading:false});
 
       })
 
@@ -61,7 +69,14 @@ componentDidMount(){
 
 searchDonorsList(term){
   filterDonors(term).then(donors =>{
-    this.setState({ donors:donors })
+    console.log("DONORS",donors);
+    let idNum = 0;
+      const result = donors.map(function(el) {
+        var o = Object.assign({}, el);
+        o.id = idNum+=1;
+        return o;
+      })
+    this.setState({ donors:result })
 
   })
     .catch(err => {
